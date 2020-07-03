@@ -1,92 +1,28 @@
 #include <stdio.h>
-#include <stdbool.h>
-#include <string.h>
 
-#define MAX_SIZE 100
-
-struct Stack{
-    int top;
-    char arr[MAX_SIZE];
-} st;
-
-void init(){
-    st.top = -1;
-}
-
-bool isEmpty(){
-    if(st.top == -1){
-        return true;
-    }else{
-        return false;
-    }
-}
-
-bool isFull(){
-    if(st.top == MAX_SIZE-1){
-        return true;
-    }else{
-        return false;
-    }
-}
-
-void push(char item){
-    if(isFull()){
-            printf("Stack is full");
-    }else{
-        st.top++;
-        st.arr[st.top] = item;
-    }
-}
-
-void pop(){
-    if(isEmpty()){
-        printf("Stack is empty");
-    }else{
-        st.top--;
-    }
-}
-
-char gettop(){
-    return st.arr[st.top];
-}
-
-bool ArePair(char opening,char closing)
+struct students
 {
-	if(opening == '(' && closing == ')') return true;
-	else if(opening == '{' && closing == '}') return true;
-	else if(opening == '[' && closing == ']') return true;
-	return false;
-}
-
-void main()
+    int id,year;
+    char name[100];
+    float cgpa;
+};
+ int main()
 {
-    char in_expr[MAX_SIZE];
-    int length=0,i,j;
+    int i;
+    struct students a[100];
+   for(i=1;i<=4;i++)
 
-    init();
+   {
+   printf("\nInformation of Student %d:---",i);
+   printf("\nEnter the name of student= ");
+   scanf("%s%s",&a[i].name);
+   printf("\nEnter the ID of student= ");
+   scanf("%d",&a[i].id);
+   printf("\nEnter the Year of student= ");
+   scanf("%d",&a[i].year);
+   printf("\nEnter the CGPA of student= ");
+   scanf("%f",&a[i].cgpa);
+   }
 
-    printf("Enter an expression to check:");
-    gets(in_expr);
-
-    length = strlen(in_expr);
-
-    for(i=0;i<length;i++){
-        if(in_expr[i] == '(' || in_expr[i] == '{' || in_expr[i] == '['){
-                push(in_expr[i]);
-        }else if(in_expr[i] == ')' || in_expr[i] == '}' || in_expr[i] == ']'){
-            char a = gettop();
-            printf("%c",a);
-            if(isEmpty() || !ArePair(gettop(),in_expr[i])){
-                printf("\nResult - Invalid expression - Not a Balanced one !");
-                return 0;
-            }else{
-                pop();
-            }
-        }
-    }
-    if(isEmpty()){
-        printf("\nBalanced !");
-    }else{
-        printf("\nNot a Balanced one !");
-    }
+   return 0;
 }
