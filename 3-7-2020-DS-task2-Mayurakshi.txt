@@ -1,0 +1,81 @@
+#include<stdio.h>
+#include<stdlib.h>
+struct Node
+{
+  int data;
+  struct Node *left;
+  struct Node *right;
+};
+void insert(struct Node **root,int d)
+{
+   struct Node *temp,*n;
+   temp=(struct Node*)malloc(sizeof(struct Node));
+   n=*root;
+   temp->data=d;
+   if(n==NULL)
+   {
+       temp->left=NULL;
+       temp->right=NULL;
+       *root=temp;
+   }
+   else
+   {
+      while(d>n->data && n->right)
+         n=n->right;
+      while(d<n->data && n->left)
+         n=n->left;
+      if(d<n->data)
+      {
+           n->left=(struct Node*)malloc(sizeof(struct Node));
+           n=n->left;
+           n->data=d;
+           n->left=NULL;
+           n->right=NULL;
+      }
+      if(d>n->data)
+      {
+           n->right=(struct Node*)malloc(sizeof(struct Node));
+           n=n->right;
+           n->data=d;
+           n->left=NULL;
+           n->right=NULL;
+      }
+    }
+ }
+void postorder(struct Node *n)
+{
+   if (n==NULL)
+   return ;
+   postorder(n->left);
+   postorder(n->right);
+   printf("%d ",n->data);
+}
+struct Node * New_Node(int d)
+{
+   struct Node *neww;
+   neww=(struct Node*)malloc(sizeof(struct Node));
+   neww->data=d;
+   neww->left=NULL;
+   neww->right=NULL;
+   return neww;
+}
+int main()
+{  int i=0;
+   struct Node *root;//,*left,*right;
+   root=New_Node(5);
+   root->left=New_Node(4);
+   root->right=New_Node(9);
+   root->right->left=New_Node(7);
+   root->right->right=New_Node(10);
+   insert(&root,5);
+   insert(&root,4);
+   insert(&root,12);
+   insert(&root,1);
+   insert(&root,90);
+   insert(&root,44);
+
+
+   printf("\nPostorder : ");
+   postorder(root);
+
+}

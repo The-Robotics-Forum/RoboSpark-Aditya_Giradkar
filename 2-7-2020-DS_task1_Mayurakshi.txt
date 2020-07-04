@@ -1,0 +1,78 @@
+#include<stdio.h>
+#include<stdlib.h>
+struct Node
+{
+  char data;
+  struct Node* up;
+};
+void push_stack(struct Node **h,char d)
+{
+    struct Node *temp,*r;
+    r=*h;
+    temp=(struct Node*)malloc(sizeof(struct Node));
+    if(r==NULL)
+    {
+       temp->data=d;
+       temp->up=NULL;
+       *h=temp;
+    }
+    else{
+
+    temp->data=d;
+    temp->up=r;
+    *h=temp;
+    }
+}
+void pop_stack(struct Node **top)
+{
+  struct Node *temp,*r;
+  r=*top;
+  if(r!=NULL)
+  {
+    temp=r->up;
+    *top=temp;
+  }
+}
+void printll(struct Node *n)
+{  while(n!=NULL)
+   {
+     printf("%d\n",n->data);
+     n=n->up;
+   }
+}
+bool is_emp(struct Node *t)
+{
+  if(t==NULL)
+  return true;
+  return false;
+}
+int main()
+{
+  int n,i=0;
+  char c;
+  struct Node *top;
+  top=(struct Node *)malloc(sizeof(struct Node));
+  top=NULL;
+  printf("Enter the number of characters in expression  ");
+  scanf("%d",&n);
+  while(i!=n)
+  { printf("Enter character  ");
+    fflush(stdin);
+    scanf("%c",&c);
+    if(c=='(')
+      push_stack(&top,c);
+    if(c==')' && is_emp(top))
+      {
+        printf("Not Balanced");
+        return 0;
+      }
+    if(c==')')
+      pop_stack(&top);
+   i++;
+  }
+  if(is_emp(top))
+    printf("Balanced ");
+  else
+    printf("Not Balanced expression");
+    return 0;
+}
