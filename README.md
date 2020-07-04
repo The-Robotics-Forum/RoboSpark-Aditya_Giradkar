@@ -1,5 +1,7 @@
 # RoboSpark-Aditya_Giradkar
-
+- Aarushi Bhate
+- Mayurakshi Zodage
+- Sandesh Mankar
 
 ## Steps to submit the task:
 1. Fork the repo
@@ -33,5 +35,6 @@ E.g. 2-7-2020_DS_Task-1_Aditya_Giradkar
         ```git push origin branch_name``` 
 
 (Now your code files are in your forked repo check it by switching the branch, you have to create pull request to main repo in order to submit your code)
+
 
 > All the best!
