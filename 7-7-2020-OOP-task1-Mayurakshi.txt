@@ -16,7 +16,7 @@ class String
 		{    this->size=size;
 			  st= new char[size];
 			
-        }
+            }
        
         String operator +(String s);
         String operator *(int z);
