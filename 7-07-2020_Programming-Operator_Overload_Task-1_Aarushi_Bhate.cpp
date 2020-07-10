@@ -15,7 +15,7 @@ class String
         String (char s[]){
             strcpy(str, s);
         }
-    void gets_string();
+
         String operator+ (String object ){
             String temp;
             if(strlen(temp.str) + strlen(object.str)<50){
@@ -34,14 +34,12 @@ class String
             cout<<str<<endl;
         }
 };
-int main(){
+ main(){
 
-String s1 = "Aarushi";
-String s2 = "Bhate";
-s1.display();
-s2.display();
-
-String s1 = "Aarushi";
+    String s1 = "Aarushi";
+    String s2 = "Bhate";
+    s1.display();
+    s2.display();
 
 String s3;
 s3 = s1+s2;
