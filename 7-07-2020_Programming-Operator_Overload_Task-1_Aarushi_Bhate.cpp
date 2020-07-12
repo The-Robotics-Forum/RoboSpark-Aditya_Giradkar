@@ -37,7 +37,7 @@ class String
  main(){
 
     String s1 = "Aarushi";
-    String s2 = "Bhate";
+    String s2 = "Aarushi";
     s1.display();
     s2.display();
 
