@@ -1,0 +1,31 @@
+<!------
+  Today's Task
+1) Create a table named students having four columns  stud_id, stud_name,  branch,  cgpa where stud_id being primary key.
+2) Create webpage(html) having  a input tag of stud_id and a  button. Once the stud_id is entered, fetch the  respective details of that stud_id from table and display it on php page wherever action of form  is done.
+3) Include html, css, php files  and screenshots of output and table in folder.
+----->
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Student</title>
+  </head>
+  <body>
+    <form class="login_box" action="task_13.php" method="post">
+      <h1>Student Details</h1>
+
+      <div class="form_input">
+      <i class="fa fa-id-badge" aria-hidden="true"></i>
+      <input type="text" name="st_id" value="" placeholder="Enter Student ID" required>
+      </div>
+
+
+      <div class="">
+        <input type="submit" name="submit" value="Print" class="submit-btn">
+
+      </div>
+      </form>
+  </body>
+</html>
