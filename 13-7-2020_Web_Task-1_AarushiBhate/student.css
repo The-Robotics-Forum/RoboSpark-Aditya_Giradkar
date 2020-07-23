@@ -1,0 +1,29 @@
+body{
+
+        background-color: #8fcfd1;
+        font-family: 'Righteous', cursive;
+
+}
+h1{
+    color: #0f4c75;
+    font-size: 50px;
+
+}
+.space{
+    text-align: center;
+    padding-top: 200px;
+}
+.info-page{
+    background-color:#abf0e9;
+    margin-right: 200px;
+    margin-left: 200px;
+    text-align: center;
+}
+info-page.h2{
+
+        color: #6a197d;
+}
+
+
+
+

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--charset is telling browser that we are using UTF-8 encoding,
+        it is like ASCII but ASCII has limited characterset which is of no use in real world-->
+    <meta charset="UTF-8">
+    <title>Student's Information</title>
+    
+    <!--CDN link for fontawesome icons-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--link to external css file-->
+
+    <link rel="stylesheet" href="student.css">
+</head>
+
+<body>
+    <div class="space">
+    <!--login form starts-->
+    <form method="POST" action="student.php" class="login-box">
+        <h1>GET INFORMATION</h1>
+        <div class="form_input">
+           <i class="fa fa-user" aria-hidden="true"></i>
+            <input type="number" name="Stud_id" placeholder="Enter Student_id" required/>
+        </div>
+        <input type="submit" name="submit" value="Get info" class="submit-btn" /> 
+    </form>
+    </div>
+
+    
+<!--NOTE: difference between id and class:
+            id is unique and it is given to only one element 
